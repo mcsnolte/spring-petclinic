@@ -1,0 +1,12 @@
+---
+- hosts: all
+  tasks
+    - name: Install Java
+      become: true
+      apt:
+        name: default-jre
+        state: present
+
+    - name: Check Java
+      command: java -version
+
